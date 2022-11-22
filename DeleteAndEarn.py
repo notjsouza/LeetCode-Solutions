@@ -1,9 +1,6 @@
 class Solution:
     def deleteAndEarn(self, nums: List[int]) -> int:
         
-        points, pre, cur = [0] * 10001, 0, 0
-        
-        for num in nums: points[num] += num
-        for val in points: pre, cur = cur, max(pre + val, cur)
-            
+        points, pre, cur = Counter(nums), 0, 0
+        for val in range(max(points.keys()) + 1): pre, cur = cur, max(pre + val * points[val], cur)
         return cur
