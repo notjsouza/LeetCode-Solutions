@@ -11,8 +11,6 @@ class Solution:
                 s_t[s1] = t1
                 t_s[t1] = s1
                 
-            elif s_t.get(s1) != t1 or t_s.get(t1) != s1:
-                
-                return False
+            elif s_t.get(s1) != t1 or t_s.get(t1) != s1: return False
         
         return True
