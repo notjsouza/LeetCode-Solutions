@@ -5,8 +5,8 @@ class Solution:
         
         nodes = [root.val]
         
-        for n in root.children:
+        for node in root.children:
             
-            nodes.extend(self.preorder(n))
+            nodes.extend(self.preorder(node))
         
         return nodes
